@@ -1,0 +1,364 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(main.png);
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+.container-effects {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    backdrop-filter: blur(4px);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        background-image: url(main.png);
+        background-position: center;
+        background-size: 200% 100%;
+    }
+}
+
+.absolute-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    border: none;
+    outline: none;
+}
+
+.abs-cions-top-left {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.dark-mode {
+    width: 6vh;
+    max-width: 50px;
+    padding: 1.6vh;
+    border-radius: 50%;
+    background-color: #b43f35;
+    color: #fff;
+}
+
+.other-icon {
+    width: 6vh;
+    max-width: 50px;
+    padding: 1.6vh;
+    top: 25px;
+    left: 25px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #b43f35;
+}
+
+.top-right {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.clock {
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+#battery-bars {
+    width: 58px;
+    display: flex;
+    gap: 3px;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.battery-bar {
+    width: 4px;
+    height: 20px;
+    background-color: #ccc;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.setting-box {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+    max-width: 50px;
+    width: 6vh;
+    padding: 1.6vh;
+    background-color: #b43f35;
+    border-radius: 50%;
+    color: #fff;
+}
+
+.setting-box svg {
+    width: 100%;
+    aspect-ratio: 1/1;
+}
+
+.right-arrow {
+    width: 22px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    border: none;
+    border-top: 4px dotted #fff;
+    border-left: 4px dotted #fff;
+    transform: rotate(-45deg);
+    background-color: transparent;
+    outline: none;
+}
+
+.main-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60%;
+    max-width: 600px;
+    min-width: 200px;
+}
+
+.search-box {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border-radius: 25px;
+    box-shadow: 0 0 25px #ffffff40;
+}
+
+.search-box #search {
+    width: 85%;
+    height: 50px;
+    padding: 10px 18px;
+    outline: none;
+    border-radius: 40px 0 0 40px;
+    border: none;
+    font-size: 16px;
+}
+
+.search-box #search::placeholder {
+    text-align: center;
+    font-size: 20px;
+    padding: 0 50% 0 50%;
+    transition: .2s all ease;
+    position: relative;
+    top: 2px;
+    left: 3px;
+}
+
+.search-box #search::placeholder {
+    user-select: none;
+}
+
+.search-box #search:focus::placeholder {
+    padding: unset;
+    text-align: start;
+}
+
+.search-box button {
+    width: 15%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    outline: none;
+}
+
+.search-box button[type="reset"] {
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
+.search-box button[type="submit"] {
+    height: 101%;
+    border-radius: 0 40px 40px 0;
+    background-color: #b43f35;
+    border: none;
+}
+
+.search-box button svg {
+    width: 20px;
+    height: 80%;
+    aspect-ratio: 1/1;
+}
+
+.button-box {
+    display: flex;
+    gap: 25px;
+}
+
+.button-box a {
+    aspect-ratio: 1/1;
+    text-decoration: none;
+}
+
+.button-box a:hover {
+    font-size: 16px;
+}
+
+.button-box svg {
+    width: 22px;
+}
+
+.button-box .button-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.button-box .button-item {
+    font-weight: 200;
+    color: #ffffffaa;
+    font-size: 14px;
+    transition: .2s all ease-in-out;
+}
+
+.button-box button {
+    padding: 10px;
+    background-color: #b43f35;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+}
+
+.button-box .btn-box-f {
+    background-color: #fff;
+}
+
+.open-menu {
+    min-width: 200px;
+    max-width: 400px;
+    width: 35%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.open-menu-top {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.open-menu ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    transition: .2s all ease-out;
+}
+
+.open-menu ul li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.open-menu ul li a {
+    width: 400px;
+    max-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.open-menu ul li p {
+    font-size: 2px;
+    color: transparent;
+    transition: .2s all ease-in-out;
+}
+
+.open-menu ul li:hover>p {
+    display: block;
+    font-size: 26px;
+    opacity: 1;
+    color: #fff;
+}
+
+.open-menu-bottom {
+    width: 50px;
+    border-radius: 40px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50%;
+    padding: unset;
+    background-color: #fff;
+}
+
+.open-menu-bottom svg {
+    width: 40px;
+    stroke: #b43f35;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 50%;
+}
+
+.open-menu-bottom svg path {
+    stroke: #b43f35;
+}
